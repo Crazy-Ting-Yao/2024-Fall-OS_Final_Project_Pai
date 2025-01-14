@@ -1,0 +1,733 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.4.0 #14620 (Mac OS X ppc)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module lcdlib
+                                      6 	.optsdcc -mmcs51 --model-small
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _CY
+                                     12 	.globl _AC
+                                     13 	.globl _F0
+                                     14 	.globl _RS1
+                                     15 	.globl _RS0
+                                     16 	.globl _OV
+                                     17 	.globl _F1
+                                     18 	.globl _P
+                                     19 	.globl _PS
+                                     20 	.globl _PT1
+                                     21 	.globl _PX1
+                                     22 	.globl _PT0
+                                     23 	.globl _PX0
+                                     24 	.globl _RD
+                                     25 	.globl _WR
+                                     26 	.globl _T1
+                                     27 	.globl _T0
+                                     28 	.globl _INT1
+                                     29 	.globl _INT0
+                                     30 	.globl _TXD
+                                     31 	.globl _RXD
+                                     32 	.globl _P3_7
+                                     33 	.globl _P3_6
+                                     34 	.globl _P3_5
+                                     35 	.globl _P3_4
+                                     36 	.globl _P3_3
+                                     37 	.globl _P3_2
+                                     38 	.globl _P3_1
+                                     39 	.globl _P3_0
+                                     40 	.globl _EA
+                                     41 	.globl _ES
+                                     42 	.globl _ET1
+                                     43 	.globl _EX1
+                                     44 	.globl _ET0
+                                     45 	.globl _EX0
+                                     46 	.globl _P2_7
+                                     47 	.globl _P2_6
+                                     48 	.globl _P2_5
+                                     49 	.globl _P2_4
+                                     50 	.globl _P2_3
+                                     51 	.globl _P2_2
+                                     52 	.globl _P2_1
+                                     53 	.globl _P2_0
+                                     54 	.globl _SM0
+                                     55 	.globl _SM1
+                                     56 	.globl _SM2
+                                     57 	.globl _REN
+                                     58 	.globl _TB8
+                                     59 	.globl _RB8
+                                     60 	.globl _TI
+                                     61 	.globl _RI
+                                     62 	.globl _P1_7
+                                     63 	.globl _P1_6
+                                     64 	.globl _P1_5
+                                     65 	.globl _P1_4
+                                     66 	.globl _P1_3
+                                     67 	.globl _P1_2
+                                     68 	.globl _P1_1
+                                     69 	.globl _P1_0
+                                     70 	.globl _TF1
+                                     71 	.globl _TR1
+                                     72 	.globl _TF0
+                                     73 	.globl _TR0
+                                     74 	.globl _IE1
+                                     75 	.globl _IT1
+                                     76 	.globl _IE0
+                                     77 	.globl _IT0
+                                     78 	.globl _P0_7
+                                     79 	.globl _P0_6
+                                     80 	.globl _P0_5
+                                     81 	.globl _P0_4
+                                     82 	.globl _P0_3
+                                     83 	.globl _P0_2
+                                     84 	.globl _P0_1
+                                     85 	.globl _P0_0
+                                     86 	.globl _B
+                                     87 	.globl _ACC
+                                     88 	.globl _PSW
+                                     89 	.globl _IP
+                                     90 	.globl _P3
+                                     91 	.globl _IE
+                                     92 	.globl _P2
+                                     93 	.globl _SBUF
+                                     94 	.globl _SCON
+                                     95 	.globl _P1
+                                     96 	.globl _TH1
+                                     97 	.globl _TH0
+                                     98 	.globl _TL1
+                                     99 	.globl _TL0
+                                    100 	.globl _TMOD
+                                    101 	.globl _TCON
+                                    102 	.globl _PCON
+                                    103 	.globl _DPH
+                                    104 	.globl _DPL
+                                    105 	.globl _SP
+                                    106 	.globl _P0
+                                    107 	.globl _LCD_set_symbol_PARM_2
+                                    108 	.globl _lcd_ready
+                                    109 	.globl _LCD_ready
+                                    110 	.globl _LCD_Init
+                                    111 	.globl _LCD_IRWrite
+                                    112 	.globl _LCD_functionSet
+                                    113 	.globl _LCD_write_char
+                                    114 	.globl _LCD_write_string
+                                    115 	.globl _delay
+                                    116 	.globl _LCD_set_symbol
+                                    117 ;--------------------------------------------------------
+                                    118 ; special function registers
+                                    119 ;--------------------------------------------------------
+                                    120 	.area RSEG    (ABS,DATA)
+      000000                        121 	.org 0x0000
+                           000080   122 _P0	=	0x0080
+                           000081   123 _SP	=	0x0081
+                           000082   124 _DPL	=	0x0082
+                           000083   125 _DPH	=	0x0083
+                           000087   126 _PCON	=	0x0087
+                           000088   127 _TCON	=	0x0088
+                           000089   128 _TMOD	=	0x0089
+                           00008A   129 _TL0	=	0x008a
+                           00008B   130 _TL1	=	0x008b
+                           00008C   131 _TH0	=	0x008c
+                           00008D   132 _TH1	=	0x008d
+                           000090   133 _P1	=	0x0090
+                           000098   134 _SCON	=	0x0098
+                           000099   135 _SBUF	=	0x0099
+                           0000A0   136 _P2	=	0x00a0
+                           0000A8   137 _IE	=	0x00a8
+                           0000B0   138 _P3	=	0x00b0
+                           0000B8   139 _IP	=	0x00b8
+                           0000D0   140 _PSW	=	0x00d0
+                           0000E0   141 _ACC	=	0x00e0
+                           0000F0   142 _B	=	0x00f0
+                                    143 ;--------------------------------------------------------
+                                    144 ; special function bits
+                                    145 ;--------------------------------------------------------
+                                    146 	.area RSEG    (ABS,DATA)
+      000000                        147 	.org 0x0000
+                           000080   148 _P0_0	=	0x0080
+                           000081   149 _P0_1	=	0x0081
+                           000082   150 _P0_2	=	0x0082
+                           000083   151 _P0_3	=	0x0083
+                           000084   152 _P0_4	=	0x0084
+                           000085   153 _P0_5	=	0x0085
+                           000086   154 _P0_6	=	0x0086
+                           000087   155 _P0_7	=	0x0087
+                           000088   156 _IT0	=	0x0088
+                           000089   157 _IE0	=	0x0089
+                           00008A   158 _IT1	=	0x008a
+                           00008B   159 _IE1	=	0x008b
+                           00008C   160 _TR0	=	0x008c
+                           00008D   161 _TF0	=	0x008d
+                           00008E   162 _TR1	=	0x008e
+                           00008F   163 _TF1	=	0x008f
+                           000090   164 _P1_0	=	0x0090
+                           000091   165 _P1_1	=	0x0091
+                           000092   166 _P1_2	=	0x0092
+                           000093   167 _P1_3	=	0x0093
+                           000094   168 _P1_4	=	0x0094
+                           000095   169 _P1_5	=	0x0095
+                           000096   170 _P1_6	=	0x0096
+                           000097   171 _P1_7	=	0x0097
+                           000098   172 _RI	=	0x0098
+                           000099   173 _TI	=	0x0099
+                           00009A   174 _RB8	=	0x009a
+                           00009B   175 _TB8	=	0x009b
+                           00009C   176 _REN	=	0x009c
+                           00009D   177 _SM2	=	0x009d
+                           00009E   178 _SM1	=	0x009e
+                           00009F   179 _SM0	=	0x009f
+                           0000A0   180 _P2_0	=	0x00a0
+                           0000A1   181 _P2_1	=	0x00a1
+                           0000A2   182 _P2_2	=	0x00a2
+                           0000A3   183 _P2_3	=	0x00a3
+                           0000A4   184 _P2_4	=	0x00a4
+                           0000A5   185 _P2_5	=	0x00a5
+                           0000A6   186 _P2_6	=	0x00a6
+                           0000A7   187 _P2_7	=	0x00a7
+                           0000A8   188 _EX0	=	0x00a8
+                           0000A9   189 _ET0	=	0x00a9
+                           0000AA   190 _EX1	=	0x00aa
+                           0000AB   191 _ET1	=	0x00ab
+                           0000AC   192 _ES	=	0x00ac
+                           0000AF   193 _EA	=	0x00af
+                           0000B0   194 _P3_0	=	0x00b0
+                           0000B1   195 _P3_1	=	0x00b1
+                           0000B2   196 _P3_2	=	0x00b2
+                           0000B3   197 _P3_3	=	0x00b3
+                           0000B4   198 _P3_4	=	0x00b4
+                           0000B5   199 _P3_5	=	0x00b5
+                           0000B6   200 _P3_6	=	0x00b6
+                           0000B7   201 _P3_7	=	0x00b7
+                           0000B0   202 _RXD	=	0x00b0
+                           0000B1   203 _TXD	=	0x00b1
+                           0000B2   204 _INT0	=	0x00b2
+                           0000B3   205 _INT1	=	0x00b3
+                           0000B4   206 _T0	=	0x00b4
+                           0000B5   207 _T1	=	0x00b5
+                           0000B6   208 _WR	=	0x00b6
+                           0000B7   209 _RD	=	0x00b7
+                           0000B8   210 _PX0	=	0x00b8
+                           0000B9   211 _PT0	=	0x00b9
+                           0000BA   212 _PX1	=	0x00ba
+                           0000BB   213 _PT1	=	0x00bb
+                           0000BC   214 _PS	=	0x00bc
+                           0000D0   215 _P	=	0x00d0
+                           0000D1   216 _F1	=	0x00d1
+                           0000D2   217 _OV	=	0x00d2
+                           0000D3   218 _RS0	=	0x00d3
+                           0000D4   219 _RS1	=	0x00d4
+                           0000D5   220 _F0	=	0x00d5
+                           0000D6   221 _AC	=	0x00d6
+                           0000D7   222 _CY	=	0x00d7
+                                    223 ;--------------------------------------------------------
+                                    224 ; overlayable register banks
+                                    225 ;--------------------------------------------------------
+                                    226 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                        227 	.ds 8
+                                    228 ;--------------------------------------------------------
+                                    229 ; internal ram data
+                                    230 ;--------------------------------------------------------
+                                    231 	.area DSEG    (DATA)
+                           00003E   232 _lcd_ready	=	0x003e
+      000000                        233 _LCD_Init_dinosaur_10001_13:
+      000000                        234 	.ds 8
+      000008                        235 _LCD_Init_cactus_10002_14:
+      000008                        236 	.ds 8
+      000010                        237 _LCD_set_symbol_PARM_2:
+      000010                        238 	.ds 3
+                                    239 ;--------------------------------------------------------
+                                    240 ; overlayable items in internal ram
+                                    241 ;--------------------------------------------------------
+                                    242 	.area	OSEG    (OVR,DATA)
+                                    243 ;--------------------------------------------------------
+                                    244 ; indirectly addressable internal ram data
+                                    245 ;--------------------------------------------------------
+                                    246 	.area ISEG    (DATA)
+                                    247 ;--------------------------------------------------------
+                                    248 ; absolute internal ram data
+                                    249 ;--------------------------------------------------------
+                                    250 	.area IABS    (ABS,DATA)
+                                    251 	.area IABS    (ABS,DATA)
+                                    252 ;--------------------------------------------------------
+                                    253 ; bit data
+                                    254 ;--------------------------------------------------------
+                                    255 	.area BSEG    (BIT)
+                                    256 ;--------------------------------------------------------
+                                    257 ; paged external ram data
+                                    258 ;--------------------------------------------------------
+                                    259 	.area PSEG    (PAG,XDATA)
+                                    260 ;--------------------------------------------------------
+                                    261 ; uninitialized external ram data
+                                    262 ;--------------------------------------------------------
+                                    263 	.area XSEG    (XDATA)
+                                    264 ;--------------------------------------------------------
+                                    265 ; absolute external ram data
+                                    266 ;--------------------------------------------------------
+                                    267 	.area XABS    (ABS,XDATA)
+                                    268 ;--------------------------------------------------------
+                                    269 ; initialized external ram data
+                                    270 ;--------------------------------------------------------
+                                    271 	.area XISEG   (XDATA)
+                                    272 	.area HOME    (CODE)
+                                    273 	.area GSINIT0 (CODE)
+                                    274 	.area GSINIT1 (CODE)
+                                    275 	.area GSINIT2 (CODE)
+                                    276 	.area GSINIT3 (CODE)
+                                    277 	.area GSINIT4 (CODE)
+                                    278 	.area GSINIT5 (CODE)
+                                    279 	.area GSINIT  (CODE)
+                                    280 	.area GSFINAL (CODE)
+                                    281 	.area CSEG    (CODE)
+                                    282 ;--------------------------------------------------------
+                                    283 ; global & static initialisations
+                                    284 ;--------------------------------------------------------
+                                    285 	.area HOME    (CODE)
+                                    286 	.area GSINIT  (CODE)
+                                    287 	.area GSFINAL (CODE)
+                                    288 	.area GSINIT  (CODE)
+                                    289 ;--------------------------------------------------------
+                                    290 ; Home
+                                    291 ;--------------------------------------------------------
+                                    292 	.area HOME    (CODE)
+                                    293 	.area HOME    (CODE)
+                                    294 ;--------------------------------------------------------
+                                    295 ; code
+                                    296 ;--------------------------------------------------------
+                                    297 	.area CSEG    (CODE)
+                                    298 ;------------------------------------------------------------
+                                    299 ;Allocation info for local variables in function 'LCD_ready'
+                                    300 ;------------------------------------------------------------
+                                    301 ;	lcdlib.c:16: unsigned char LCD_ready(void) {
+                                    302 ;	-----------------------------------------
+                                    303 ;	 function LCD_ready
+                                    304 ;	-----------------------------------------
+      000000                        305 _LCD_ready:
+                           000007   306 	ar7 = 0x07
+                           000006   307 	ar6 = 0x06
+                           000005   308 	ar5 = 0x05
+                           000004   309 	ar4 = 0x04
+                           000003   310 	ar3 = 0x03
+                           000002   311 	ar2 = 0x02
+                           000001   312 	ar1 = 0x01
+                           000000   313 	ar0 = 0x00
+                                    314 ;	lcdlib.c:17: return lcd_ready;
+      000000 85 3E 82         [24]  315 	mov	dpl, _lcd_ready
+                                    316 ;	lcdlib.c:18: }
+      000003 22               [24]  317 	ret
+                                    318 ;------------------------------------------------------------
+                                    319 ;Allocation info for local variables in function 'LCD_Init'
+                                    320 ;------------------------------------------------------------
+                                    321 ;dinosaur                  Allocated with name '_LCD_Init_dinosaur_10001_13'
+                                    322 ;cactus                    Allocated with name '_LCD_Init_cactus_10002_14'
+                                    323 ;------------------------------------------------------------
+                                    324 ;	lcdlib.c:19: void LCD_Init(void) {
+                                    325 ;	-----------------------------------------
+                                    326 ;	 function LCD_Init
+                                    327 ;	-----------------------------------------
+      000004                        328 _LCD_Init:
+                                    329 ;	lcdlib.c:20: LCD_functionSet();
+      000004 12r00r87         [24]  330 	lcall	_LCD_functionSet
+                                    331 ;	lcdlib.c:21: LCD_entryModeSet(1, 1); /* increment and no shift */
+      000007 75 82 07         [24]  332 	mov	dpl, #0x07
+      00000A 12r00r65         [24]  333 	lcall	_LCD_IRWrite
+                                    334 ;	lcdlib.c:22: LCD_displayOnOffControl(1, 1, 1); /* display on, cursor on and blinking on */
+      00000D 75 82 0F         [24]  335 	mov	dpl, #0x0f
+      000010 12r00r65         [24]  336 	lcall	_LCD_IRWrite
+                                    337 ;	lcdlib.c:23: const char dinosaur[] = {0x07, 0x05, 0x06, 0x07, 0x14, 0x17, 0x0E, 0x0A};
+      000013 75*00 07         [24]  338 	mov	_LCD_Init_dinosaur_10001_13,#0x07
+      000016 75*01 05         [24]  339 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0001),#0x05
+      000019 75*02 06         [24]  340 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0002),#0x06
+      00001C 75*03 07         [24]  341 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0003),#0x07
+      00001F 75*04 14         [24]  342 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0004),#0x14
+      000022 75*05 17         [24]  343 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0005),#0x17
+      000025 75*06 0E         [24]  344 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0006),#0x0e
+      000028 75*07 0A         [24]  345 	mov	(_LCD_Init_dinosaur_10001_13 + 0x0007),#0x0a
+                                    346 ;	lcdlib.c:24: LCD_set_symbol('\10', dinosaur); // bitmap for dinosaur starts at 0x10
+      00002B 75*10r00         [24]  347 	mov	_LCD_set_symbol_PARM_2,#_LCD_Init_dinosaur_10001_13
+      00002E 75*11 00         [24]  348 	mov	(_LCD_set_symbol_PARM_2 + 1),#0x00
+      000031 75*12 40         [24]  349 	mov	(_LCD_set_symbol_PARM_2 + 2),#0x40
+      000034 75 82 08         [24]  350 	mov	dpl, #0x08
+      000037 12r01r14         [24]  351 	lcall	_LCD_set_symbol
+                                    352 ;	lcdlib.c:25: const char cactus[] = {0x04, 0x05, 0x15, 0x15, 0x16, 0x0C, 0x04, 0x04};
+      00003A 75*08 04         [24]  353 	mov	_LCD_Init_cactus_10002_14,#0x04
+      00003D 75*09 05         [24]  354 	mov	(_LCD_Init_cactus_10002_14 + 0x0001),#0x05
+      000040 75*0A 15         [24]  355 	mov	(_LCD_Init_cactus_10002_14 + 0x0002),#0x15
+      000043 75*0B 15         [24]  356 	mov	(_LCD_Init_cactus_10002_14 + 0x0003),#0x15
+      000046 75*0C 16         [24]  357 	mov	(_LCD_Init_cactus_10002_14 + 0x0004),#0x16
+      000049 75*0D 0C         [24]  358 	mov	(_LCD_Init_cactus_10002_14 + 0x0005),#0x0c
+      00004C 75*0E 04         [24]  359 	mov	(_LCD_Init_cactus_10002_14 + 0x0006),#0x04
+      00004F 75*0F 04         [24]  360 	mov	(_LCD_Init_cactus_10002_14 + 0x0007),#0x04
+                                    361 ;	lcdlib.c:26: LCD_set_symbol('\20', cactus);   // bitmap for cactus starts at 0x20
+      000052 75*10r08         [24]  362 	mov	_LCD_set_symbol_PARM_2,#_LCD_Init_cactus_10002_14
+      000055 75*11 00         [24]  363 	mov	(_LCD_set_symbol_PARM_2 + 1),#0x00
+      000058 75*12 40         [24]  364 	mov	(_LCD_set_symbol_PARM_2 + 2),#0x40
+      00005B 75 82 10         [24]  365 	mov	dpl, #0x10
+      00005E 12r01r14         [24]  366 	lcall	_LCD_set_symbol
+                                    367 ;	lcdlib.c:27: lcd_ready = 1;
+      000061 75 3E 01         [24]  368 	mov	_lcd_ready,#0x01
+                                    369 ;	lcdlib.c:28: }
+      000064 22               [24]  370 	ret
+                                    371 ;------------------------------------------------------------
+                                    372 ;Allocation info for local variables in function 'LCD_IRWrite'
+                                    373 ;------------------------------------------------------------
+                                    374 ;c                         Allocated to registers r7 
+                                    375 ;------------------------------------------------------------
+                                    376 ;	lcdlib.c:29: void LCD_IRWrite(char c) {
+                                    377 ;	-----------------------------------------
+                                    378 ;	 function LCD_IRWrite
+                                    379 ;	-----------------------------------------
+      000065                        380 _LCD_IRWrite:
+      000065 AF 82            [24]  381 	mov	r7, dpl
+                                    382 ;	lcdlib.c:30: lcd_ready = 0;
+      000067 75 3E 00         [24]  383 	mov	_lcd_ready,#0x00
+                                    384 ;	lcdlib.c:31: DB = (c & 0xf0); // high nibble, keep RS low
+      00006A 74 F0            [12]  385 	mov	a,#0xf0
+      00006C 5F               [12]  386 	anl	a,r7
+      00006D F5 90            [12]  387 	mov	_P1,a
+                                    388 ;	lcdlib.c:32: E = 1;  // pulse E
+                                    389 ;	assignBit
+      00006F D2 92            [12]  390 	setb	_P1_2
+                                    391 ;	lcdlib.c:33: E = 0;
+                                    392 ;	assignBit
+      000071 C2 92            [12]  393 	clr	_P1_2
+                                    394 ;	lcdlib.c:34: DB = (c << 4); // low nibble, keep RS low
+      000073 EF               [12]  395 	mov	a,r7
+      000074 C4               [12]  396 	swap	a
+      000075 54 F0            [12]  397 	anl	a,#0xf0
+      000077 F5 90            [12]  398 	mov	_P1,a
+                                    399 ;	lcdlib.c:35: E = 1;
+                                    400 ;	assignBit
+      000079 D2 92            [12]  401 	setb	_P1_2
+                                    402 ;	lcdlib.c:36: E = 0;
+                                    403 ;	assignBit
+      00007B C2 92            [12]  404 	clr	_P1_2
+                                    405 ;	lcdlib.c:37: delay(DELAY_AMOUNT);
+      00007D 75 82 32         [24]  406 	mov	dpl, #0x32
+      000080 12r01r10         [24]  407 	lcall	_delay
+                                    408 ;	lcdlib.c:38: lcd_ready = 1;
+      000083 75 3E 01         [24]  409 	mov	_lcd_ready,#0x01
+                                    410 ;	lcdlib.c:39: }
+      000086 22               [24]  411 	ret
+                                    412 ;------------------------------------------------------------
+                                    413 ;Allocation info for local variables in function 'LCD_functionSet'
+                                    414 ;------------------------------------------------------------
+                                    415 ;	lcdlib.c:40: void LCD_functionSet(void) {
+                                    416 ;	-----------------------------------------
+                                    417 ;	 function LCD_functionSet
+                                    418 ;	-----------------------------------------
+      000087                        419 _LCD_functionSet:
+                                    420 ;	lcdlib.c:41: lcd_ready = 0;
+      000087 75 3E 00         [24]  421 	mov	_lcd_ready,#0x00
+                                    422 ;	lcdlib.c:44: DB = 0x20;  // DB<7:4> = 0010, <RS,E,x,x>=0
+      00008A 75 90 20         [24]  423 	mov	_P1,#0x20
+                                    424 ;	lcdlib.c:45: E = 1;
+                                    425 ;	assignBit
+      00008D D2 92            [12]  426 	setb	_P1_2
+                                    427 ;	lcdlib.c:46: E = 0;
+                                    428 ;	assignBit
+      00008F C2 92            [12]  429 	clr	_P1_2
+                                    430 ;	lcdlib.c:47: delay(DELAY_AMOUNT);
+      000091 75 82 32         [24]  431 	mov	dpl, #0x32
+      000094 12r01r10         [24]  432 	lcall	_delay
+                                    433 ;	lcdlib.c:48: E = 1;
+                                    434 ;	assignBit
+      000097 D2 92            [12]  435 	setb	_P1_2
+                                    436 ;	lcdlib.c:49: E = 0;
+                                    437 ;	assignBit
+      000099 C2 92            [12]  438 	clr	_P1_2
+                                    439 ;	lcdlib.c:50: delay(DELAY_AMOUNT); // added, to ensure sufficient delay
+      00009B 75 82 32         [24]  440 	mov	dpl, #0x32
+      00009E 12r01r10         [24]  441 	lcall	_delay
+                                    442 ;	lcdlib.c:51: DB7 = 1; // 2-line model
+                                    443 ;	assignBit
+      0000A1 D2 97            [12]  444 	setb	_P1_7
+                                    445 ;	lcdlib.c:53: E = 1;
+                                    446 ;	assignBit
+      0000A3 D2 92            [12]  447 	setb	_P1_2
+                                    448 ;	lcdlib.c:54: E = 0;
+                                    449 ;	assignBit
+      0000A5 C2 92            [12]  450 	clr	_P1_2
+                                    451 ;	lcdlib.c:55: delay(DELAY_AMOUNT);
+      0000A7 75 82 32         [24]  452 	mov	dpl, #0x32
+      0000AA 12r01r10         [24]  453 	lcall	_delay
+                                    454 ;	lcdlib.c:56: lcd_ready = 1;
+      0000AD 75 3E 01         [24]  455 	mov	_lcd_ready,#0x01
+                                    456 ;	lcdlib.c:57: }
+      0000B0 22               [24]  457 	ret
+                                    458 ;------------------------------------------------------------
+                                    459 ;Allocation info for local variables in function 'LCD_write_char'
+                                    460 ;------------------------------------------------------------
+                                    461 ;c                         Allocated to registers r7 
+                                    462 ;------------------------------------------------------------
+                                    463 ;	lcdlib.c:59: void LCD_write_char(char c) {
+                                    464 ;	-----------------------------------------
+                                    465 ;	 function LCD_write_char
+                                    466 ;	-----------------------------------------
+      0000B1                        467 _LCD_write_char:
+      0000B1 AF 82            [24]  468 	mov	r7, dpl
+                                    469 ;	lcdlib.c:60: lcd_ready = 0;
+      0000B3 75 3E 00         [24]  470 	mov	_lcd_ready,#0x00
+                                    471 ;	lcdlib.c:61: DB = (c & 0xf0) | 0x08; //; keep the RS
+      0000B6 74 F0            [12]  472 	mov	a,#0xf0
+      0000B8 5F               [12]  473 	anl	a,r7
+      0000B9 44 08            [12]  474 	orl	a,#0x08
+      0000BB F5 90            [12]  475 	mov	_P1,a
+                                    476 ;	lcdlib.c:62: RS = 1;
+                                    477 ;	assignBit
+      0000BD D2 93            [12]  478 	setb	_P1_3
+                                    479 ;	lcdlib.c:63: E = 1;
+                                    480 ;	assignBit
+      0000BF D2 92            [12]  481 	setb	_P1_2
+                                    482 ;	lcdlib.c:64: E = 0;
+                                    483 ;	assignBit
+      0000C1 C2 92            [12]  484 	clr	_P1_2
+                                    485 ;	lcdlib.c:65: DB = (c << 4) | 0x08; // keep the RS
+      0000C3 EF               [12]  486 	mov	a,r7
+      0000C4 C4               [12]  487 	swap	a
+      0000C5 54 F0            [12]  488 	anl	a,#0xf0
+      0000C7 FF               [12]  489 	mov	r7,a
+      0000C8 74 08            [12]  490 	mov	a,#0x08
+      0000CA 4F               [12]  491 	orl	a,r7
+      0000CB F5 90            [12]  492 	mov	_P1,a
+                                    493 ;	lcdlib.c:66: E = 1;
+                                    494 ;	assignBit
+      0000CD D2 92            [12]  495 	setb	_P1_2
+                                    496 ;	lcdlib.c:67: E = 0;
+                                    497 ;	assignBit
+      0000CF C2 92            [12]  498 	clr	_P1_2
+                                    499 ;	lcdlib.c:68: delay(DELAY_AMOUNT);
+      0000D1 75 82 32         [24]  500 	mov	dpl, #0x32
+      0000D4 12r01r10         [24]  501 	lcall	_delay
+                                    502 ;	lcdlib.c:69: lcd_ready = 1;
+      0000D7 75 3E 01         [24]  503 	mov	_lcd_ready,#0x01
+                                    504 ;	lcdlib.c:70: }
+      0000DA 22               [24]  505 	ret
+                                    506 ;------------------------------------------------------------
+                                    507 ;Allocation info for local variables in function 'LCD_write_string'
+                                    508 ;------------------------------------------------------------
+                                    509 ;str                       Allocated to registers 
+                                    510 ;------------------------------------------------------------
+                                    511 ;	lcdlib.c:71: void LCD_write_string(char* str) {
+                                    512 ;	-----------------------------------------
+                                    513 ;	 function LCD_write_string
+                                    514 ;	-----------------------------------------
+      0000DB                        515 _LCD_write_string:
+      0000DB AD 82            [24]  516 	mov	r5, dpl
+      0000DD AE 83            [24]  517 	mov	r6, dph
+      0000DF AF F0            [24]  518 	mov	r7, b
+                                    519 ;	lcdlib.c:72: while (*str++) {
+      0000E1                        520 00101$:
+      0000E1 8D 82            [24]  521 	mov	dpl,r5
+      0000E3 8E 83            [24]  522 	mov	dph,r6
+      0000E5 8F F0            [24]  523 	mov	b,r7
+      0000E7 12r00r00         [24]  524 	lcall	__gptrget
+      0000EA FC               [12]  525 	mov	r4,a
+      0000EB A3               [24]  526 	inc	dptr
+      0000EC AD 82            [24]  527 	mov	r5,dpl
+      0000EE AE 83            [24]  528 	mov	r6,dph
+      0000F0 EC               [12]  529 	mov	a,r4
+      0000F1 60 1C            [24]  530 	jz	00104$
+                                    531 ;	lcdlib.c:73: LCD_write_char(*str);
+      0000F3 8D 82            [24]  532 	mov	dpl,r5
+      0000F5 8E 83            [24]  533 	mov	dph,r6
+      0000F7 8F F0            [24]  534 	mov	b,r7
+      0000F9 12r00r00         [24]  535 	lcall	__gptrget
+      0000FC F5 82            [12]  536 	mov	dpl,a
+      0000FE C0 07            [24]  537 	push	ar7
+      000100 C0 06            [24]  538 	push	ar6
+      000102 C0 05            [24]  539 	push	ar5
+      000104 12r00rB1         [24]  540 	lcall	_LCD_write_char
+      000107 D0 05            [24]  541 	pop	ar5
+      000109 D0 06            [24]  542 	pop	ar6
+      00010B D0 07            [24]  543 	pop	ar7
+      00010D 80 D2            [24]  544 	sjmp	00101$
+      00010F                        545 00104$:
+                                    546 ;	lcdlib.c:75: }
+      00010F 22               [24]  547 	ret
+                                    548 ;------------------------------------------------------------
+                                    549 ;Allocation info for local variables in function 'delay'
+                                    550 ;------------------------------------------------------------
+                                    551 ;n                         Allocated to registers 
+                                    552 ;------------------------------------------------------------
+                                    553 ;	lcdlib.c:76: void delay(unsigned char n) {
+                                    554 ;	-----------------------------------------
+                                    555 ;	 function delay
+                                    556 ;	-----------------------------------------
+      000110                        557 _delay:
+                                    558 ;	lcdlib.c:80: __endasm;
+      000110                        559 dhere:
+      000110 D5 82 FD         [24]  560 	djnz	dpl, dhere
+                                    561 ;	lcdlib.c:82: }
+      000113 22               [24]  562 	ret
+                                    563 ;------------------------------------------------------------
+                                    564 ;Allocation info for local variables in function 'LCD_set_symbol'
+                                    565 ;------------------------------------------------------------
+                                    566 ;symb                      Allocated with name '_LCD_set_symbol_PARM_2'
+                                    567 ;code                      Allocated to registers r7 
+                                    568 ;------------------------------------------------------------
+                                    569 ;	lcdlib.c:84: void LCD_set_symbol(char code, const char symb[]) {
+                                    570 ;	-----------------------------------------
+                                    571 ;	 function LCD_set_symbol
+                                    572 ;	-----------------------------------------
+      000114                        573 _LCD_set_symbol:
+      000114 AF 82            [24]  574 	mov	r7, dpl
+                                    575 ;	lcdlib.c:89: LCD_setCgRamAddress(code); // code is the character generation memory 
+      000116 74 40            [12]  576 	mov	a,#0x40
+      000118 4F               [12]  577 	orl	a,r7
+      000119 F5 82            [12]  578 	mov	dpl,a
+      00011B 12r00r65         [24]  579 	lcall	_LCD_IRWrite
+                                    580 ;	lcdlib.c:92: LCD_write_char(symb[0]);
+      00011E AD*10            [24]  581 	mov	r5,_LCD_set_symbol_PARM_2
+      000120 AE*11            [24]  582 	mov	r6,(_LCD_set_symbol_PARM_2 + 1)
+      000122 AF*12            [24]  583 	mov	r7,(_LCD_set_symbol_PARM_2 + 2)
+      000124 8D 82            [24]  584 	mov	dpl,r5
+      000126 8E 83            [24]  585 	mov	dph,r6
+      000128 8F F0            [24]  586 	mov	b,r7
+      00012A 12r00r00         [24]  587 	lcall	__gptrget
+      00012D F5 82            [12]  588 	mov	dpl,a
+      00012F C0 07            [24]  589 	push	ar7
+      000131 C0 06            [24]  590 	push	ar6
+      000133 C0 05            [24]  591 	push	ar5
+      000135 12r00rB1         [24]  592 	lcall	_LCD_write_char
+      000138 D0 05            [24]  593 	pop	ar5
+      00013A D0 06            [24]  594 	pop	ar6
+      00013C D0 07            [24]  595 	pop	ar7
+                                    596 ;	lcdlib.c:93: LCD_write_char(symb[1]);
+      00013E 74 01            [12]  597 	mov	a,#0x01
+      000140 2D               [12]  598 	add	a, r5
+      000141 FA               [12]  599 	mov	r2,a
+      000142 E4               [12]  600 	clr	a
+      000143 3E               [12]  601 	addc	a, r6
+      000144 FB               [12]  602 	mov	r3,a
+      000145 8F 04            [24]  603 	mov	ar4,r7
+      000147 8A 82            [24]  604 	mov	dpl,r2
+      000149 8B 83            [24]  605 	mov	dph,r3
+      00014B 8C F0            [24]  606 	mov	b,r4
+      00014D 12r00r00         [24]  607 	lcall	__gptrget
+      000150 F5 82            [12]  608 	mov	dpl,a
+      000152 C0 07            [24]  609 	push	ar7
+      000154 C0 06            [24]  610 	push	ar6
+      000156 C0 05            [24]  611 	push	ar5
+      000158 12r00rB1         [24]  612 	lcall	_LCD_write_char
+      00015B D0 05            [24]  613 	pop	ar5
+      00015D D0 06            [24]  614 	pop	ar6
+      00015F D0 07            [24]  615 	pop	ar7
+                                    616 ;	lcdlib.c:94: LCD_write_char(symb[2]);
+      000161 74 02            [12]  617 	mov	a,#0x02
+      000163 2D               [12]  618 	add	a, r5
+      000164 FA               [12]  619 	mov	r2,a
+      000165 E4               [12]  620 	clr	a
+      000166 3E               [12]  621 	addc	a, r6
+      000167 FB               [12]  622 	mov	r3,a
+      000168 8F 04            [24]  623 	mov	ar4,r7
+      00016A 8A 82            [24]  624 	mov	dpl,r2
+      00016C 8B 83            [24]  625 	mov	dph,r3
+      00016E 8C F0            [24]  626 	mov	b,r4
+      000170 12r00r00         [24]  627 	lcall	__gptrget
+      000173 F5 82            [12]  628 	mov	dpl,a
+      000175 C0 07            [24]  629 	push	ar7
+      000177 C0 06            [24]  630 	push	ar6
+      000179 C0 05            [24]  631 	push	ar5
+      00017B 12r00rB1         [24]  632 	lcall	_LCD_write_char
+      00017E D0 05            [24]  633 	pop	ar5
+      000180 D0 06            [24]  634 	pop	ar6
+      000182 D0 07            [24]  635 	pop	ar7
+                                    636 ;	lcdlib.c:95: LCD_write_char(symb[3]);
+      000184 74 03            [12]  637 	mov	a,#0x03
+      000186 2D               [12]  638 	add	a, r5
+      000187 FA               [12]  639 	mov	r2,a
+      000188 E4               [12]  640 	clr	a
+      000189 3E               [12]  641 	addc	a, r6
+      00018A FB               [12]  642 	mov	r3,a
+      00018B 8F 04            [24]  643 	mov	ar4,r7
+      00018D 8A 82            [24]  644 	mov	dpl,r2
+      00018F 8B 83            [24]  645 	mov	dph,r3
+      000191 8C F0            [24]  646 	mov	b,r4
+      000193 12r00r00         [24]  647 	lcall	__gptrget
+      000196 F5 82            [12]  648 	mov	dpl,a
+      000198 C0 07            [24]  649 	push	ar7
+      00019A C0 06            [24]  650 	push	ar6
+      00019C C0 05            [24]  651 	push	ar5
+      00019E 12r00rB1         [24]  652 	lcall	_LCD_write_char
+      0001A1 D0 05            [24]  653 	pop	ar5
+      0001A3 D0 06            [24]  654 	pop	ar6
+      0001A5 D0 07            [24]  655 	pop	ar7
+                                    656 ;	lcdlib.c:96: LCD_write_char(symb[4]);
+      0001A7 74 04            [12]  657 	mov	a,#0x04
+      0001A9 2D               [12]  658 	add	a, r5
+      0001AA FA               [12]  659 	mov	r2,a
+      0001AB E4               [12]  660 	clr	a
+      0001AC 3E               [12]  661 	addc	a, r6
+      0001AD FB               [12]  662 	mov	r3,a
+      0001AE 8F 04            [24]  663 	mov	ar4,r7
+      0001B0 8A 82            [24]  664 	mov	dpl,r2
+      0001B2 8B 83            [24]  665 	mov	dph,r3
+      0001B4 8C F0            [24]  666 	mov	b,r4
+      0001B6 12r00r00         [24]  667 	lcall	__gptrget
+      0001B9 F5 82            [12]  668 	mov	dpl,a
+      0001BB C0 07            [24]  669 	push	ar7
+      0001BD C0 06            [24]  670 	push	ar6
+      0001BF C0 05            [24]  671 	push	ar5
+      0001C1 12r00rB1         [24]  672 	lcall	_LCD_write_char
+      0001C4 D0 05            [24]  673 	pop	ar5
+      0001C6 D0 06            [24]  674 	pop	ar6
+      0001C8 D0 07            [24]  675 	pop	ar7
+                                    676 ;	lcdlib.c:97: LCD_write_char(symb[5]);
+      0001CA 74 05            [12]  677 	mov	a,#0x05
+      0001CC 2D               [12]  678 	add	a, r5
+      0001CD FA               [12]  679 	mov	r2,a
+      0001CE E4               [12]  680 	clr	a
+      0001CF 3E               [12]  681 	addc	a, r6
+      0001D0 FB               [12]  682 	mov	r3,a
+      0001D1 8F 04            [24]  683 	mov	ar4,r7
+      0001D3 8A 82            [24]  684 	mov	dpl,r2
+      0001D5 8B 83            [24]  685 	mov	dph,r3
+      0001D7 8C F0            [24]  686 	mov	b,r4
+      0001D9 12r00r00         [24]  687 	lcall	__gptrget
+      0001DC F5 82            [12]  688 	mov	dpl,a
+      0001DE C0 07            [24]  689 	push	ar7
+      0001E0 C0 06            [24]  690 	push	ar6
+      0001E2 C0 05            [24]  691 	push	ar5
+      0001E4 12r00rB1         [24]  692 	lcall	_LCD_write_char
+      0001E7 D0 05            [24]  693 	pop	ar5
+      0001E9 D0 06            [24]  694 	pop	ar6
+      0001EB D0 07            [24]  695 	pop	ar7
+                                    696 ;	lcdlib.c:98: LCD_write_char(symb[6]);
+      0001ED 74 06            [12]  697 	mov	a,#0x06
+      0001EF 2D               [12]  698 	add	a, r5
+      0001F0 FA               [12]  699 	mov	r2,a
+      0001F1 E4               [12]  700 	clr	a
+      0001F2 3E               [12]  701 	addc	a, r6
+      0001F3 FB               [12]  702 	mov	r3,a
+      0001F4 8F 04            [24]  703 	mov	ar4,r7
+      0001F6 8A 82            [24]  704 	mov	dpl,r2
+      0001F8 8B 83            [24]  705 	mov	dph,r3
+      0001FA 8C F0            [24]  706 	mov	b,r4
+      0001FC 12r00r00         [24]  707 	lcall	__gptrget
+      0001FF F5 82            [12]  708 	mov	dpl,a
+      000201 C0 07            [24]  709 	push	ar7
+      000203 C0 06            [24]  710 	push	ar6
+      000205 C0 05            [24]  711 	push	ar5
+      000207 12r00rB1         [24]  712 	lcall	_LCD_write_char
+      00020A D0 05            [24]  713 	pop	ar5
+      00020C D0 06            [24]  714 	pop	ar6
+      00020E D0 07            [24]  715 	pop	ar7
+                                    716 ;	lcdlib.c:99: LCD_write_char(symb[7]);
+      000210 74 07            [12]  717 	mov	a,#0x07
+      000212 2D               [12]  718 	add	a, r5
+      000213 FD               [12]  719 	mov	r5,a
+      000214 E4               [12]  720 	clr	a
+      000215 3E               [12]  721 	addc	a, r6
+      000216 FE               [12]  722 	mov	r6,a
+      000217 8D 82            [24]  723 	mov	dpl,r5
+      000219 8E 83            [24]  724 	mov	dph,r6
+      00021B 8F F0            [24]  725 	mov	b,r7
+      00021D 12r00r00         [24]  726 	lcall	__gptrget
+      000220 F5 82            [12]  727 	mov	dpl,a
+                                    728 ;	lcdlib.c:102: }
+      000222 02r00rB1         [24]  729 	ljmp	_LCD_write_char
+                                    730 	.area CSEG    (CODE)
+                                    731 	.area CONST   (CODE)
+                                    732 	.area XINIT   (CODE)
+                                    733 	.area CABS    (ABS,CODE)

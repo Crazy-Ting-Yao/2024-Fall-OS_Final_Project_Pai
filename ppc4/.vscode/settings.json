@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.spi": "spice",
+        "*.sv": "verilog",
+        "preemptive.h": "c"
+    }
+}

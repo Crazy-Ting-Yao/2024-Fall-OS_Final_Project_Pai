@@ -1,0 +1,320 @@
+ASxxxx Linker V03.00/V05.40 + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT0                       
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT2                       
+C:   00000000  l_GSINIT3                       
+C:   00000000  l_GSINIT4                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_OSEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  l_BSEG_BYTES                    
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000004  l_BSEG                          
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000010  s_REG_BANK_2                    
+C:   00000011  l_HOME                          
+C:   00000011  s_GSFINAL                       
+C:   00000011  s_GSINIT                        
+C:   00000011  s_GSINIT0                       
+C:   00000011  s_GSINIT1                       
+ASxxxx Linker V03.00/V05.40 + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000011  s_GSINIT2                       
+C:   00000011  s_GSINIT3                       
+C:   00000011  s_GSINIT4                       
+C:   00000011  s_GSINIT5                       
+C:   00000014  s_CSEG                          
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_OSEG                          
+C:   00000018  s_REG_BANK_3                    
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000021  s_SSEG                          
+C:   00000068  l_DSEG                          
+C:   000000DF  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   00000222  l_CSEG                          
+C:   00000236  s_CONST                         
+C:   00000236  s_XINIT                         
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           preemptive
+     00000030  _savedSP                           preemptive
+     00000034  _currentThread                     preemptive
+     00000035  _threadMask                        preemptive
+     00000036  _i                                 preemptive
+     00000037  _tempSP                            preemptive
+     00000038  _newThread                         preemptive
+     00000039  _temp                              preemptive
+     0000003A  _buffer                            testpreempt
+     0000003B  _currentChar                       testpreempt
+     0000003C  _bufferFull                        testpreempt
+     00000080  _P0                                preemptive
+     00000080  _P0_0                              preemptive
+     00000081  _P0_1                              preemptive
+     00000081  _SP                                preemptive
+     00000082  _DPL                               preemptive
+     00000082  _P0_2                              preemptive
+     00000083  _DPH                               preemptive
+     00000083  _P0_3                              preemptive
+     00000084  _P0_4                              preemptive
+     00000085  _P0_5                              preemptive
+     00000086  _P0_6                              preemptive
+     00000087  _P0_7                              preemptive
+     00000087  _PCON                              preemptive
+     00000088  _IT0                               preemptive
+     00000088  _TCON                              preemptive
+     00000089  _IE0                               preemptive
+     00000089  _TMOD                              preemptive
+     0000008A  _IT1                               preemptive
+     0000008A  _TL0                               preemptive
+     0000008B  _IE1                               preemptive
+     0000008B  _TL1                               preemptive
+     0000008C  _TH0                               preemptive
+     0000008C  _TR0                               preemptive
+     0000008D  _TF0                               preemptive
+     0000008D  _TH1                               preemptive
+     0000008E  _TR1                               preemptive
+     0000008F  _TF1                               preemptive
+     00000090  _P1                                preemptive
+     00000090  _P1_0                              preemptive
+     00000091  _P1_1                              preemptive
+     00000092  _P1_2                              preemptive
+     00000093  _P1_3                              preemptive
+     00000094  _P1_4                              preemptive
+     00000095  _P1_5                              preemptive
+     00000096  _P1_6                              preemptive
+     00000097  _P1_7                              preemptive
+     00000098  _RI                                preemptive
+     00000098  _SCON                              preemptive
+     00000099  _SBUF                              preemptive
+ASxxxx Linker V03.00/V05.40 + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000099  _TI                                preemptive
+     0000009A  _RB8                               preemptive
+     0000009B  _TB8                               preemptive
+     0000009C  _REN                               preemptive
+     0000009D  _SM2                               preemptive
+     0000009E  _SM1                               preemptive
+     0000009F  _SM0                               preemptive
+     000000A0  _P2                                preemptive
+     000000A0  _P2_0                              preemptive
+     000000A1  _P2_1                              preemptive
+     000000A2  _P2_2                              preemptive
+     000000A3  _P2_3                              preemptive
+     000000A4  _P2_4                              preemptive
+     000000A5  _P2_5                              preemptive
+     000000A6  _P2_6                              preemptive
+     000000A7  _P2_7                              preemptive
+     000000A8  _EX0                               preemptive
+     000000A8  _IE                                preemptive
+     000000A9  _ET0                               preemptive
+     000000AA  _EX1                               preemptive
+     000000AB  _ET1                               preemptive
+     000000AC  _ES                                preemptive
+     000000AF  _EA                                preemptive
+     000000B0  _P3                                preemptive
+     000000B0  _P3_0                              preemptive
+     000000B0  _RXD                               preemptive
+     000000B1  _P3_1                              preemptive
+     000000B1  _TXD                               preemptive
+     000000B2  _INT0                              preemptive
+     000000B2  _P3_2                              preemptive
+     000000B3  _INT1                              preemptive
+     000000B3  _P3_3                              preemptive
+     000000B4  _P3_4                              preemptive
+     000000B4  _T0                                preemptive
+     000000B5  _P3_5                              preemptive
+     000000B5  _T1                                preemptive
+     000000B6  _P3_6                              preemptive
+     000000B6  _WR                                preemptive
+     000000B7  _P3_7                              preemptive
+     000000B7  _RD                                preemptive
+     000000B8  _IP                                preemptive
+     000000B8  _PX0                               preemptive
+     000000B9  _PT0                               preemptive
+     000000BA  _PX1                               preemptive
+     000000BB  _PT1                               preemptive
+     000000BC  _PS                                preemptive
+     000000D0  _P                                 preemptive
+     000000D0  _PSW                               preemptive
+     000000D1  _F1                                preemptive
+     000000D2  _OV                                preemptive
+     000000D3  _RS0                               preemptive
+ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000D4  _RS1                               preemptive
+     000000D5  _F0                                preemptive
+     000000D6  _AC                                preemptive
+     000000D7  _CY                                preemptive
+     000000E0  _ACC                               preemptive
+     000000F0  _B                                 preemptive
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BSEG_BYTES                          00000020    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000068 =         104. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000021    000000DF =         223. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000021  __start__stack                     testpreempt
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000011 =          17. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000000E  __sdcc_program_startup             testpreempt
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00000011    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000014    00000222 =         546. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000014  _Producer                          testpreempt
+C:   00000041  _Consumer                          testpreempt
+C:   00000071  _main                              testpreempt
+C:   0000007D  __sdcc_gsinit_startup              testpreempt
+C:   00000081  __mcs51_genRAMCLEAR                testpreempt
+C:   00000082  __mcs51_genXINIT                   testpreempt
+C:   00000083  __mcs51_genXRAMCLEAR               testpreempt
+C:   00000084  _timer0_ISR                        testpreempt
+C:   00000088  _Bootstrap                         preemptive
+C:   000000AE  _myTimer0Handler                   preemptive
+C:   00000103  _ThreadCreate                      preemptive
+C:   0000017E  _ThreadYield                       preemptive
+C:   000001D9  _ThreadExit                        preemptive
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 13.
+
+Files Linked                              [ module(s) ]
+
+testpreempt.rel                           [  ]
+preemptive.rel                            [  ]
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 14.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+

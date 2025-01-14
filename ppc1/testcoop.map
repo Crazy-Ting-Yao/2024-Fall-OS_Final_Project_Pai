@@ -1,0 +1,309 @@
+ASxxxx Linker V03.00/V05.40 + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_BSEG                          
+C:   00000000  l_BSEG_BYTES                    
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT0                       
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT2                       
+C:   00000000  l_GSINIT3                       
+C:   00000000  l_GSINIT4                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_OSEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000006  l_HOME                          
+C:   00000006  s_GSFINAL                       
+C:   00000006  s_GSINIT                        
+C:   00000006  s_GSINIT0                       
+C:   00000006  s_GSINIT1                       
+C:   00000006  s_GSINIT2                       
+C:   00000006  s_GSINIT3                       
+C:   00000006  s_GSINIT4                       
+ASxxxx Linker V03.00/V05.40 + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000006  s_GSINIT5                       
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000008  s_SSEG                          
+C:   00000009  s_CSEG                          
+C:   00000010  s_REG_BANK_2                    
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_OSEG                          
+C:   00000018  s_REG_BANK_3                    
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000080  l_DSEG                          
+C:   000000F8  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   000001B5  l_CSEG                          
+C:   000001BE  s_CONST                         
+C:   000001BE  s_XINIT                         
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           cooperative
+     00000030  _savedSP                           cooperative
+     00000034  _currentThread                     cooperative
+     00000035  _threadMask                        cooperative
+     00000036  _i                                 cooperative
+     00000037  _tempSP                            cooperative
+     00000038  _newThread                         cooperative
+     00000039  _temp                              cooperative
+     0000003A  _buffer                            testcoop
+     0000003B  _currentChar                       testcoop
+     0000003C  _bufferFull                        testcoop
+     00000080  _P0                                cooperative
+     00000080  _P0_0                              cooperative
+     00000081  _P0_1                              cooperative
+     00000081  _SP                                cooperative
+     00000082  _DPL                               cooperative
+     00000082  _P0_2                              cooperative
+     00000083  _DPH                               cooperative
+     00000083  _P0_3                              cooperative
+     00000084  _P0_4                              cooperative
+     00000085  _P0_5                              cooperative
+     00000086  _P0_6                              cooperative
+     00000087  _P0_7                              cooperative
+     00000087  _PCON                              cooperative
+     00000088  _IT0                               cooperative
+     00000088  _TCON                              cooperative
+     00000089  _IE0                               cooperative
+     00000089  _TMOD                              cooperative
+     0000008A  _IT1                               cooperative
+     0000008A  _TL0                               cooperative
+     0000008B  _IE1                               cooperative
+     0000008B  _TL1                               cooperative
+     0000008C  _TH0                               cooperative
+     0000008C  _TR0                               cooperative
+     0000008D  _TF0                               cooperative
+     0000008D  _TH1                               cooperative
+     0000008E  _TR1                               cooperative
+     0000008F  _TF1                               cooperative
+     00000090  _P1                                cooperative
+     00000090  _P1_0                              cooperative
+     00000091  _P1_1                              cooperative
+     00000092  _P1_2                              cooperative
+     00000093  _P1_3                              cooperative
+     00000094  _P1_4                              cooperative
+     00000095  _P1_5                              cooperative
+     00000096  _P1_6                              cooperative
+     00000097  _P1_7                              cooperative
+     00000098  _RI                                cooperative
+     00000098  _SCON                              cooperative
+     00000099  _SBUF                              cooperative
+ASxxxx Linker V03.00/V05.40 + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000099  _TI                                cooperative
+     0000009A  _RB8                               cooperative
+     0000009B  _TB8                               cooperative
+     0000009C  _REN                               cooperative
+     0000009D  _SM2                               cooperative
+     0000009E  _SM1                               cooperative
+     0000009F  _SM0                               cooperative
+     000000A0  _P2                                cooperative
+     000000A0  _P2_0                              cooperative
+     000000A1  _P2_1                              cooperative
+     000000A2  _P2_2                              cooperative
+     000000A3  _P2_3                              cooperative
+     000000A4  _P2_4                              cooperative
+     000000A5  _P2_5                              cooperative
+     000000A6  _P2_6                              cooperative
+     000000A7  _P2_7                              cooperative
+     000000A8  _EX0                               cooperative
+     000000A8  _IE                                cooperative
+     000000A9  _ET0                               cooperative
+     000000AA  _EX1                               cooperative
+     000000AB  _ET1                               cooperative
+     000000AC  _ES                                cooperative
+     000000AF  _EA                                cooperative
+     000000B0  _P3                                cooperative
+     000000B0  _P3_0                              cooperative
+     000000B0  _RXD                               cooperative
+     000000B1  _P3_1                              cooperative
+     000000B1  _TXD                               cooperative
+     000000B2  _INT0                              cooperative
+     000000B2  _P3_2                              cooperative
+     000000B3  _INT1                              cooperative
+     000000B3  _P3_3                              cooperative
+     000000B4  _P3_4                              cooperative
+     000000B4  _T0                                cooperative
+     000000B5  _P3_5                              cooperative
+     000000B5  _T1                                cooperative
+     000000B6  _P3_6                              cooperative
+     000000B6  _WR                                cooperative
+     000000B7  _P3_7                              cooperative
+     000000B7  _RD                                cooperative
+     000000B8  _IP                                cooperative
+     000000B8  _PX0                               cooperative
+     000000B9  _PT0                               cooperative
+     000000BA  _PX1                               cooperative
+     000000BB  _PT1                               cooperative
+     000000BC  _PS                                cooperative
+     000000D0  _P                                 cooperative
+     000000D0  _PSW                               cooperative
+     000000D1  _F1                                cooperative
+     000000D2  _OV                                cooperative
+     000000D3  _RS0                               cooperative
+ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000D4  _RS1                               cooperative
+     000000D5  _F0                                cooperative
+     000000D6  _AC                                cooperative
+     000000D7  _CY                                cooperative
+     000000E0  _ACC                               cooperative
+     000000F0  _B                                 cooperative
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    00000080 =         128. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000008    000000F8 =         248. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  __start__stack                     testcoop
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000003  __sdcc_program_startup             testcoop
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00000006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000009    000001B5 =         437. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000009  _Producer                          testcoop
+C:   00000030  _Consumer                          testcoop
+C:   00000056  _main                              testcoop
+C:   00000062  __sdcc_gsinit_startup              testcoop
+C:   00000066  __mcs51_genRAMCLEAR                testcoop
+C:   00000067  __mcs51_genXINIT                   testcoop
+C:   00000068  __mcs51_genXRAMCLEAR               testcoop
+C:   00000069  _Bootstrap                         cooperative
+C:   00000087  _ThreadCreate                      cooperative
+C:   0000010C  _ThreadYield                       cooperative
+C:   00000165  _ThreadExit                        cooperative
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
+
+Files Linked                              [ module(s) ]
+
+testcoop.rel                              [  ]
+cooperative.rel                           [  ]
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 13.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+

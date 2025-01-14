@@ -1,0 +1,382 @@
+ASxxxx Linker V03.00/V05.40 + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_CABS                          
+C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT0                       
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT2                       
+C:   00000000  l_GSINIT3                       
+C:   00000000  l_GSINIT4                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l_XINIT                         
+C:   00000000  l_XISEG                         
+C:   00000000  l_XSEG                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_HOME                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  l_BSEG_BYTES                    
+C:   00000001  s_PSEG                          
+C:   00000001  s_XISEG                         
+C:   00000001  s_XSEG                          
+C:   00000002  l_OSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000004  l_BSEG                          
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000010  s_REG_BANK_2                    
+C:   00000011  l_HOME                          
+C:   00000011  s_GSFINAL                       
+C:   00000011  s_GSINIT                        
+C:   00000011  s_GSINIT0                       
+C:   00000011  s_GSINIT1                       
+ASxxxx Linker V03.00/V05.40 + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000011  s_GSINIT2                       
+C:   00000011  s_GSINIT3                       
+C:   00000011  s_GSINIT4                       
+C:   00000011  s_GSINIT5                       
+C:   00000014  s_CSEG                          
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_REG_BANK_3                    
+C:   0000001B  s_OSEG                          
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000021  s_SSEG                          
+C:   0000007D  l_DSEG                          
+C:   000000DF  l_SSEG                          
+C:   00000100  l_IRAM                          
+C:   000008C6  l_CSEG                          
+C:   000008DA  s_CONST                         
+C:   000008DA  s_XINIT                         
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _divsint
+     00000025  _savedSP                           preemptive
+     00000029  _currentThread                     preemptive
+     0000002A  _threadMask                        preemptive
+     0000002B  _i                                 preemptive
+     0000002C  _tempSP                            preemptive
+     0000002D  _newThread                         preemptive
+     0000002E  _temp                              preemptive
+     00000030  _map_up                            dino
+     00000032  _map_down                          dino
+     00000034  _my_time                           preemptive
+     00000034  _time                              dino
+     00000035  _currentKey                        dino
+     00000036  _pop                               dino
+     00000037  _dinosaur_loc                      dino
+     00000038  _points                            dino
+     00000039  _lose                              dino
+     0000003A  _temp_shift                        dino
+     0000003B  _temp_print                        dino
+     0000003E  _lcd_ready                         lcdlib
+     00000080  _P0                                keylib
+     00000080  _P0_0                              keylib
+     00000081  _P0_1                              keylib
+     00000081  _SP                                keylib
+     00000082  _DPL                               keylib
+     00000082  _P0_2                              keylib
+     00000083  _DPH                               keylib
+     00000083  _P0_3                              keylib
+     00000084  _P0_4                              keylib
+     00000085  _P0_5                              keylib
+     00000086  _P0_6                              keylib
+     00000087  _P0_7                              keylib
+     00000087  _PCON                              keylib
+     00000088  _IT0                               keylib
+     00000088  _TCON                              keylib
+     00000089  _IE0                               keylib
+     00000089  _TMOD                              keylib
+     0000008A  _IT1                               keylib
+     0000008A  _TL0                               keylib
+     0000008B  _IE1                               keylib
+     0000008B  _TL1                               keylib
+     0000008C  _TH0                               keylib
+     0000008C  _TR0                               keylib
+     0000008D  _TF0                               keylib
+     0000008D  _TH1                               keylib
+     0000008E  _TR1                               keylib
+     0000008F  _TF1                               keylib
+     00000090  _P1                                keylib
+     00000090  _P1_0                              keylib
+     00000091  _P1_1                              keylib
+ASxxxx Linker V03.00/V05.40 + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000092  _P1_2                              keylib
+     00000093  _P1_3                              keylib
+     00000094  _P1_4                              keylib
+     00000095  _P1_5                              keylib
+     00000096  _P1_6                              keylib
+     00000097  _P1_7                              keylib
+     00000098  _RI                                keylib
+     00000098  _SCON                              keylib
+     00000099  _SBUF                              keylib
+     00000099  _TI                                keylib
+     0000009A  _RB8                               keylib
+     0000009B  _TB8                               keylib
+     0000009C  _REN                               keylib
+     0000009D  _SM2                               keylib
+     0000009E  _SM1                               keylib
+     0000009F  _SM0                               keylib
+     000000A0  _P2                                keylib
+     000000A0  _P2_0                              keylib
+     000000A1  _P2_1                              keylib
+     000000A2  _P2_2                              keylib
+     000000A3  _P2_3                              keylib
+     000000A4  _P2_4                              keylib
+     000000A5  _P2_5                              keylib
+     000000A6  _P2_6                              keylib
+     000000A7  _P2_7                              keylib
+     000000A8  _EX0                               keylib
+     000000A8  _IE                                keylib
+     000000A9  _ET0                               keylib
+     000000AA  _EX1                               keylib
+     000000AB  _ET1                               keylib
+     000000AC  _ES                                keylib
+     000000AF  _EA                                keylib
+     000000B0  _P3                                keylib
+     000000B0  _P3_0                              keylib
+     000000B0  _RXD                               keylib
+     000000B1  _P3_1                              keylib
+     000000B1  _TXD                               keylib
+     000000B2  _INT0                              keylib
+     000000B2  _P3_2                              keylib
+     000000B3  _INT1                              keylib
+     000000B3  _P3_3                              keylib
+     000000B4  _P3_4                              keylib
+     000000B4  _T0                                keylib
+     000000B5  _P3_5                              keylib
+     000000B5  _T1                                keylib
+     000000B6  _P3_6                              keylib
+     000000B6  _WR                                keylib
+     000000B7  _P3_7                              keylib
+     000000B7  _RD                                keylib
+     000000B8  _IP                                keylib
+     000000B8  _PX0                               keylib
+ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B9  _PT0                               keylib
+     000000BA  _PX1                               keylib
+     000000BB  _PT1                               keylib
+     000000BC  _PS                                keylib
+     000000D0  _P                                 keylib
+     000000D0  _PSW                               keylib
+     000000D1  _F1                                keylib
+     000000D2  _OV                                keylib
+     000000D3  _RS0                               keylib
+     000000D4  _RS1                               keylib
+     000000D5  _F0                                keylib
+     000000D6  _AC                                keylib
+     000000D7  _CY                                keylib
+     000000E0  _ACC                               keylib
+     000000F0  _B                                 keylib
+     000000F5  _B_5                               _gptrget
+     000000F6  _B_6                               _gptrget
+     000000F7  _B_7                               _gptrget
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BSEG_BYTES                          00000020    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    0000007D =         125. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000018  _LCD_set_symbol_PARM_2             lcdlib
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+OSEG                                0000001B    00000002 =           2. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000001B  __divsint_PARM_2                   _divuint
+     0000001B  __divuint_PARM_2                   _divuint
+     0000001B  __modsint_PARM_2                   _moduint
+     0000001B  __moduint_PARM_2                   _moduint
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000021    000000DF =         223. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000021  __start__stack                     dino
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00000000    00000011 =          17. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000000E  __sdcc_program_startup             dino
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00000011    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00000014    000008C6 =        2246. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000014  _render_task                       dino
+C:   00000162  _keypad_ctrl                       dino
+C:   000001E3  _game_ctrl                         dino
+C:   000002DA  _main                              dino
+C:   0000035C  __sdcc_gsinit_startup              dino
+C:   00000360  __mcs51_genRAMCLEAR                dino
+C:   00000361  __mcs51_genXINIT                   dino
+C:   00000362  __mcs51_genXRAMCLEAR               dino
+C:   00000363  _timer0_ISR                        dino
+C:   00000367  _Bootstrap                         preemptive
+C:   00000385  _myTimer0Handler                   preemptive
+C:   000003DF  _ThreadCreate                      preemptive
+C:   0000045A  _ThreadYield                       preemptive
+C:   000004B3  _ThreadExit                        preemptive
+C:   00000522  _ThreadReset                       preemptive
+C:   00000526  _LCD_ready                         lcdlib
+C:   0000052A  _LCD_Init                          lcdlib
+C:   0000058B  _LCD_IRWrite                       lcdlib
+C:   000005AD  _LCD_functionSet                   lcdlib
+C:   000005D7  _LCD_write_char                    lcdlib
+C:   00000601  _LCD_write_string                  lcdlib
+C:   00000636  _delay                             lcdlib
+C:   0000063A  _LCD_set_symbol                    lcdlib
+C:   0000074B  _Init_Keypad                       keylib
+C:   00000751  _AnyKeyPressed                     keylib
+C:   0000075E  _KeyToChar                         keylib
+C:   000007DA  __moduint                          _moduint
+C:   00000827  __divuint                          _divuint
+C:   00000850  __gptrget                          _gptrget
+C:   0000086C  __modsint                          _modsint
+C:   000008A2  __divsint                          _divsint
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 14.
+
+Files Linked                              [ module(s) ]
+
+dino.rel                                  [  ]
+preemptive.rel                            [  ]
+lcdlib.rel                                [  ]
+keylib.rel                                [  ]
+
+
+Libraries Linked                          [ object file ]
+
+/opt/homebrew/bin/../share/sdcc/lib/small/libint.lib
+                                          [ _moduint.rel ]
+/opt/homebrew/bin/../share/sdcc/lib/small/libint.lib
+                                          [ _divuint.rel ]
+/opt/homebrew/bin/../share/sdcc/lib/small/libsdcc.lib
+                                          [ _gptrget.rel ]
+/opt/homebrew/bin/../share/sdcc/lib/small/libint.lib
+                                          [ _modsint.rel ]
+/opt/homebrew/bin/../share/sdcc/lib/small/libint.lib
+                                          [ _divsint.rel ]
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 15.
+
+User Base Address Definitions
+
+HOME = 0x0000
+XSEG = 0x0001
+PSEG = 0x0001
+ISEG = 0x0000
+BSEG = 0x0000
+
+

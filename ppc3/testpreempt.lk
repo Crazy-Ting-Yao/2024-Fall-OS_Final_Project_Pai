@@ -1,0 +1,19 @@
+-muwx
+-i testpreempt.hex
+-M
+-b HOME = 0x0000
+-b XSEG = 0x0001
+-b PSEG = 0x0001
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-k /opt/homebrew/bin/../share/sdcc/lib/small
+-k /opt/homebrew/Cellar/sdcc/4.4.0/share/sdcc/lib/small
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+testpreempt.rel
+preemptive.rel
+
+-e
